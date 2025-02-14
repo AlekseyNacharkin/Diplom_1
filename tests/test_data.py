@@ -12,14 +12,15 @@ class IngridientData:
 
 class BurgerData:
     ASSERTION_TEXT = ('(==== булочка 1 ====)\n''= sauce начинка =\n''= соус FILLING =\n''(==== булочка 1 ====)\n''\n''Price: 21.72')
-    bun_name = "булочка 1"
-    bun_price = 4.20
-    ingredient_type = INGREDIENT_TYPE_FILLING
-    ingredient_name = "начинка"
-    ingredient_price = 3.33
-    ingredient_name_for_move_ingredient = "начиночка"
-    ingredient_price_for_move_ingredient = 9.99
-    ingredient_sauce = "соус"
+    BUN_NAME = "булочка 1"
+    BUN_PRICE = 4.20
+    INGREDIENT_TYPE = INGREDIENT_TYPE_FILLING
+    INGREDIENT_NAME = "начинка"
+    INGREDIENT_PRICE = 3.33
+    INGREDIENT_NAME_FOR_MOVE_INGREDIENT = "начиночка"
+    INGREDIENT_PRICE_FOR_MOVE_INGREDIENT = 9.99
+    INGREDIENT_SAUCE = "соус"
+    TOTAL = 11.73
 class DatabaseData():
     EXPEXTED_BUNS = [
         ("black bun", 100),

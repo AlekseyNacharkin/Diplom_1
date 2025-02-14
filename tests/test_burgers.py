@@ -6,23 +6,23 @@ from Diplom_1.tests.test_data import *
 
 class TestBurgers():
     def test_set_burger_bun(self):
-        bun = Bun(BurgerData.bun_name, BurgerData.bun_price)
-        ingredient = Ingredient(BurgerData.ingredient_type, BurgerData.ingredient_name, BurgerData.ingredient_price)
+        bun = Bun(BurgerData.BUN_NAME, BurgerData.BUN_PRICE)
+        ingredient = Ingredient(BurgerData.INGREDIENT_TYPE, BurgerData.INGREDIENT_NAME, BurgerData.INGREDIENT_PRICE)
         burger = Burger()
         burger.set_buns(bun)
         burger.add_ingredient(ingredient)
-        assert burger.get_price() == 11.73
+        assert burger.get_price() == BurgerData.TOTAL
 
     def test_remove_ingredients(self):
-        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE, BurgerData.ingredient_name, BurgerData.ingredient_price)
+        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE, BurgerData.INGREDIENT_NAME, BurgerData.INGREDIENT_PRICE)
         burger = Burger()
         burger.add_ingredient(ingredient)
         burger.remove_ingredient(0)
         assert burger.ingredients == []
 
     def test_move_ingredients(self):
-        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE, BurgerData.ingredient_name, BurgerData.ingredient_price)
-        ingredient1 = Ingredient(INGREDIENT_TYPE_FILLING, BurgerData.ingredient_name_for_move_ingredient, BurgerData.ingredient_price_for_move_ingredient)
+        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE, BurgerData.INGREDIENT_NAME, BurgerData.INGREDIENT_PRICE)
+        ingredient1 = Ingredient(INGREDIENT_TYPE_FILLING, BurgerData.INGREDIENT_NAME_FOR_MOVE_INGREDIENT, BurgerData.INGREDIENT_PRICE_FOR_MOVE_INGREDIENT)
         burger = Burger()
         burger.add_ingredient(ingredient)
         burger.add_ingredient(ingredient1)
@@ -30,9 +30,9 @@ class TestBurgers():
         assert burger.ingredients[1] == ingredient
 
     def test_get_receipt(self):
-        bun = Bun(BurgerData.bun_name, BurgerData.bun_price)
-        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE,BurgerData.ingredient_name, BurgerData.ingredient_price)
-        ingredient1 = Ingredient(BurgerData.ingredient_sauce, INGREDIENT_TYPE_FILLING, BurgerData.ingredient_price_for_move_ingredient)
+        bun = Bun(BurgerData.BUN_NAME, BurgerData.BUN_PRICE)
+        ingredient = Ingredient(INGREDIENT_TYPE_SAUCE,BurgerData.INGREDIENT_NAME, BurgerData.INGREDIENT_PRICE)
+        ingredient1 = Ingredient(BurgerData.INGREDIENT_SAUCE, INGREDIENT_TYPE_FILLING, BurgerData.INGREDIENT_PRICE_FOR_MOVE_INGREDIENT)
         burger = Burger()
         burger.set_buns(bun) == bun
         burger.add_ingredient(ingredient)
